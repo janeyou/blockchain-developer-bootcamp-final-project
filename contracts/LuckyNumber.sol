@@ -10,12 +10,16 @@ contract LuckyNumber {
     }
 
     function getMyNumber() public view returns (uint256) {
+        // get the code of current marathon running plan
+
         return myNumber;
     }
 
     function setMyNumber(uint256 x) public {
+        // set the code of new marathon running plan
+
         require(msg.sender == owner, 'Not the owner!');
-        require(x > 999 && x < 10000, 'Not in range!');
+        require(x > 99999 && x < 1000000, 'Not in range!');
         myNumber = x;
     }
 }
