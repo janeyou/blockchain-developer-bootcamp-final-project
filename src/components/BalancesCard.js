@@ -10,22 +10,17 @@ import { useAppContext } from '../AppContext';
 const BalanceCard = () => {
   const { account } = useWeb3React();
   const { fetchEthBalance, ethBalance } = useEth();
-  const { fetchCTokenBalance, cTokenBalance } = useCToken();
 
   useEffect(() => {
     if (account) {
       fetchEthBalance();
-      fetchCTokenBalance();
     }
   }, [account]);
 
   return (
     <Card style={{ maxWidth: 300 }}>
-      <Text block color={colors.green}>
+      <Text block color={colors.black}>
         ETH balance: {ethBalance}
-      </Text>
-      <Text block color={colors.green}>
-        cETH balance: {cTokenBalance}
       </Text>
     </Card>
   );

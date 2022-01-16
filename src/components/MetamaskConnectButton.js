@@ -7,6 +7,7 @@ import Text from './Text';
 import Card from './Card';
 import { injected } from '../connectors';
 import { shortenAddress } from '../utils/shortenAddress';
+import { ChainDiv, SmallText } from '../styles/Style';
 
 const MetamaskLogo = styled.img.attrs({
   src: MMLogo,
@@ -17,15 +18,18 @@ const MetamaskLogo = styled.img.attrs({
 const ConnectBtn = styled(Button).attrs({ variant: 'outline-dark' })``;
 
 const MetamaskConnectButton = () => {
-  const { activate, active, account, deactivate } = useWeb3React();
+  const { activate, active, account, deactivate, chainId } = useWeb3React();
 
   if (active) {
     return (
       <Card className="d-flex flex-row justify-content-between" style={{ width: 350 }}>
         <MetamaskLogo />
-        <Text uppercase color="green" t3 lineHeight="40px" className="mx-4">
+        <Text uppercase color="black" t3 lineHeight="40px" className="mx-4">
           {shortenAddress(account)}
         </Text>
+        <ChainDiv>
+          <SmallText>{(chainId === 3 && 'Ropsten testnet') || (chainId === 1337 && 'Ganache local test')}</SmallText>
+        </ChainDiv>
         <ConnectBtn onClick={deactivate}>Log Out</ConnectBtn>
       </Card>
     );
@@ -34,7 +38,7 @@ const MetamaskConnectButton = () => {
   return (
     <Card className="d-flex flex-row justify-content-between" style={{ width: 350 }}>
       <MetamaskLogo />
-      <Text uppercase color="green" t3 lineHeight="40px" className="mx-2">
+      <Text uppercase color="black" t3 lineHeight="40px" className="mx-2">
         Metamask
       </Text>
       <ConnectBtn onClick={() => activate(injected)}>Connect</ConnectBtn>
