@@ -10,6 +10,12 @@ export const ChainDiv = styled.div`
 `;
 export const SmallText = styled.span``;
 
+export const Group = styled.div`
+  width: 200px;
+  align-items: left;
+  justify-content: flex-start;
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
