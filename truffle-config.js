@@ -21,6 +21,9 @@ require('dotenv').config();
  */
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
+const path = require('path');
+
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 //
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
@@ -35,6 +38,7 @@ module.exports = {
    *
    * $ truffle test --network <network-name>
    */
+  contracts_build_directory: path.join(__dirname, 'src/contracts'),
 
   networks: {
     // Useful for testing. The `development` name is special - truffle uses it by default

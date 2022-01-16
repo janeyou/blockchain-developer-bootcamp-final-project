@@ -8,7 +8,7 @@ import { colors } from '../../theme';
 import { useWeb3React } from '@web3-react/core';
 import { useContract } from '../../hooks/useContract';
 import { useLuckyAddress } from '../../hooks/useLuckyAddress';
-import LuckyNumberABI from '../../../build/contracts/LuckyNumber.json';
+import LuckyNumberABI from '../../../src/contracts/LuckyNumber.json';
 
 const LuckyNumberCard = () => {
   const { active } = useWeb3React();
