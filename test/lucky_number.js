@@ -22,45 +22,45 @@ contract('LuckyNumber', function (accounts) {
   });
 
   describe('Functionality', () => {
-    it('should store the lucky number 6688', async () => {
+    it('should store the code 666888', async () => {
       // get subject
       const myInstance = await LuckyNumber.deployed();
 
       // change the subject
-      await myInstance.setMyNumber(6688, { from: accounts[0] });
+      await myInstance.setMyNumber(666888, { from: accounts[0] });
 
       // verify we changed the subject
       const myNumber = await myInstance.getMyNumber.call();
-      assert.equal(myNumber, 6688, `${myNumber} was not stored!`);
+      assert.equal(myNumber, 666888, `${myNumber} was not stored!`);
     });
-    it('should be a four digital number', async () => {
+    it('should be a six digital number', async () => {
       // get subject
       const myInstance = await LuckyNumber.deployed();
 
       // change the subject
-      await myInstance.setMyNumber(123, { from: accounts[0] });
+      await myInstance.setMyNumber(123123, { from: accounts[0] });
 
       // verify we changed the subject
       const myNumber = await myInstance.getMyNumber.call();
-      assert.equal(myNumber, 123, `${myNumber} was not in range!`);
+      assert.equal(myNumber, 123123, `${myNumber} was not in range!`);
     });
   });
 
   describe('Owner verification', () => {
     it('should not let someone else change the variable', async () => {
       const [owner, badJoe] = accounts;
-      const myInstance = await LuckyNumber.new(6688, { from: owner });
+      const myInstance = await LuckyNumber.new(666888, { from: owner });
 
       try {
         await myInstance.setMyNumber(9876, { from: badJoe });
       } catch (err) {
-        console.log('not the owner, so no change number!');
+        console.log('not the owner, so no change code!');
       }
       const balance = await web3.eth.getBalance(accounts[3]);
       console.log(balance);
 
       const myNumber = await myInstance.getMyNumber.call();
-      assert.equal(myNumber, 6688, 'Lucky number was not changed!');
+      assert.equal(myNumber, 666888, 'Code was not changed!');
     });
   });
 });

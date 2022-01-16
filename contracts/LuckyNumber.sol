@@ -8,10 +8,6 @@ pragma solidity >=0.4.22 <0.9.0;
 /// @custom:experimental This is an experimental contract.
 
 contract LuckyNumber {
-    /// @notice Generate marathon training plans
-    /// @dev The generator algorithm is randomized and need to be improved
-    /// @param myNumber The code to generate a marathon training schedule
-    /// @return Code in six digits
     uint256 public myNumber;
     address owner = msg.sender;
 
@@ -19,6 +15,9 @@ contract LuckyNumber {
         myNumber = _num;
     }
 
+    /// @notice Generate marathon training plans
+    /// @dev The generator algorithm is randomized and need to be improved
+    /// @return Code in six digits
     function getMyNumber() public view returns (uint256) {
         // get the code of current marathon running plan
 
@@ -27,6 +26,7 @@ contract LuckyNumber {
 
     /// @notice Reset a new plan
     /// @dev Code in six digits
+    /// @param x The code to reset a marathon training schedule
     function setMyNumber(uint256 x) public {
         // set the code of new marathon running plan
 
