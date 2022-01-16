@@ -1,8 +1,8 @@
-# blockchain-developer-bootcamp-final-project
+# Marathon Training Planner Dapp
 
-## Project Intro
+## About
 
-A simple workout planner for marathon training
+A simple workout plan generator for marathon training
 
 ## Get Started
 
@@ -11,16 +11,20 @@ A simple workout planner for marathon training
 - `npm install`
 - `ganache-cli`
 - `truffle test`
-- ``truffle migrate --network development`
+- `truffle migrate --network development`
 
 ### Run frontend
 
 - `yarn start`
-- Check `http://localhost:3000/`
+- Visit `http://localhost:3000/`
 
 ## Screencast - how it works
 
 - https://youtu.be/mOXzPcYqbWI
+
+## Dapp URL
+
+- https://marathon-training-dapp.netlify.app/
 
 ## Public Ethereum Address
 
@@ -29,10 +33,10 @@ A simple workout planner for marathon training
 
 ## Unit Tests
 
-- Tested initial deployment, verify the initial value, check the functionality, check the range and owner verification
+- Initial deployment, verify the initial value, check the functionality, check the valid range and owner verification
 
 ## Future enhancement
 
-- Improve running scheudle algorithm
+- Improve running schedule algorithm
 - Add workout types
 - Record and visulize workout sessions
